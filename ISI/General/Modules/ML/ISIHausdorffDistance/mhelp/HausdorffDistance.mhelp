@@ -1,0 +1,119 @@
+ModuleHelp  {
+  MetaInformation  {
+    definition = Modules/ML/ISIHausdorffDistance/ISIHausdorffDistance.def
+    moduleName = HausdorffDistance
+    moduleType = MLModule
+    author = "Hugo Kuijf"
+    DLL = ISIHausdorffDistance
+    genre = ""
+    keywords = ""
+    seeAlso = ""
+    package = General
+    packageGroup = ISI
+  }
+  Purpose  {
+    text = ""
+  }
+  Usage  {
+    text = ""
+  }
+  Details  {
+    text = ""
+  }
+  Interaction  {
+    text = ""
+  }
+  Tips  {
+    text = ""
+  }
+  Windows  {
+    text = ""
+  }
+  Inputs  {
+    text = ""
+    Field input0 {
+      type = MLBase
+      text = ""
+    }
+    Field input1 {
+      type = MLBase
+      text = ""
+    }
+  }
+  Parameters  {
+    Field instanceName {
+      type = String
+      text = ""
+      title = ""
+      needsDocumentation = No
+      visibleInGUI = No
+      persistent = Yes
+      default = HausdorffDistance
+    }
+    Field percentile {
+      type = Double
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = 0.95
+    }
+    Field update {
+      type = Trigger
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = ""
+    }
+    Field hausdorffDistanceAToB {
+      type = Double
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = 0
+    }
+    Field hausdorffDistanceBToA {
+      type = Double
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = 0
+    }
+    Field hausdorffPercentileAToB {
+      type = Double
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = 0
+    }
+    Field hausdorffPercentileBToA {
+      type = Double
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = 0
+    }
+    Field distancesAToB {
+      type = String
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = ""
+    }
+    Field distancesBToA {
+      type = String
+      text = ""
+      title = ""
+      visibleInGUI = No
+      persistent = Yes
+      default = ""
+    }
+    text = ""
+  }
+}

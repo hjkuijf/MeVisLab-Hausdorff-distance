@@ -1,0 +1,27 @@
+//----------------------------------------------------------------------------------
+//! ISIHausdorffDistance module definitions.
+/*!
+// \file    ISIHausdorffDistance.def
+// \author  Hugo Kuijf
+// \date    2013-05-02
+*/
+//----------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------
+// MLModule HausdorffDistance
+//----------------------------------------------------------------------------------
+MLModule HausdorffDistance {
+  DLL            = "ISIHausdorffDistance"
+
+  genre          = ""
+  author         = "Hugo Kuijf"
+  comment        = ""
+  keywords       = ""
+  seeAlso        = ""
+  exampleNetwork = "$(LOCAL)/networks/HausdorffDistanceExample.mlab"
+
+  Deployment {
+    directory = $(MLAB_ISI_ThirdParty)/lib
+  }
+}
