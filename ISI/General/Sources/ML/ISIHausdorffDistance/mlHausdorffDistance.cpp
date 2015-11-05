@@ -66,7 +66,7 @@ void HausdorffDistance::handleNotification(Field *field)
     handleNotificationInput(_input1Fld, _input1XMarkerList);
   }
 
-  if (field == _updateFld && _input0XMarkerList != NULL && _input1XMarkerList != NULL) {
+  if (field == _updateFld && _input0XMarkerList != nullptr && _input1XMarkerList != nullptr && _input0XMarkerList->size() > 0 && _input1XMarkerList->size() > 0) {
     // A to B
     process(_input0XMarkerList, _input1XMarkerList, _hausdorffDistanceAToBFld, _hausdorffPercentileAToBFld, _distancesAToBFld);
 
@@ -75,15 +75,17 @@ void HausdorffDistance::handleNotification(Field *field)
   }
 }
 
-void HausdorffDistance::handleNotificationInput( const BaseField* inputFld, XMarkerList*& inputXMarkerList )
+void HausdorffDistance::handleNotificationInput( const BaseField* inputFld, XMarkerList*& inputXMarkerList ) const
 {
   Base* baseValue = inputFld->getBaseValue();
   inputXMarkerList = mlbase_cast<XMarkerList*>(baseValue);
 
-  if (baseValue == NULL) {
+  if (baseValue == nullptr) {
     std::cout << "No " << inputFld->getName() << std::endl;
-  } else if(inputXMarkerList == NULL) {
+  } else if(inputXMarkerList == nullptr) {
     std::cout << "No valid xMarkerList at " << inputFld->getName() << std::endl;
+  } else if(inputXMarkerList->size() == 0)  {
+    std::cout << "Empty xMarkerList at " << inputFld->getName() << std::endl;
   } else {
     //std::cout << "Valid  " << inputFld->getName() << std::endl;
   }
@@ -140,7 +142,7 @@ void HausdorffDistance::hausdorffDistancePercentile( const std::vector<MLdouble>
   outputField->setDoubleValue(*middle);
 }
 
-void HausdorffDistance::process( const XMarkerList* const aList, const XMarkerList* const bList, DoubleField* const distanceFld, DoubleField* const percentileList, StringField* const distancesFld)
+void HausdorffDistance::process( const XMarkerList* const aList, const XMarkerList* const bList, DoubleField* const distanceFld, DoubleField* const percentileList, StringField* const distancesFld) const
 {
   std::vector<MLdouble> distanceList;
   std::vector<MLdouble> distanceListKNN;

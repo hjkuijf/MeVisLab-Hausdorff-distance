@@ -45,7 +45,7 @@ public:
 
   void computeDistances( const XMarkerList* const firstList, const XMarkerList* const secondList, std::vector<MLdouble>& distances ) const;
 
-  void handleNotificationInput(const BaseField* inputFld, XMarkerList*& inputXMarkerList);
+  void handleNotificationInput(const BaseField* inputFld, XMarkerList*& inputXMarkerList) const;
 
 private:
 
