@@ -18,8 +18,7 @@ DLLDESTDIR = ../../../lib
 WARN = HIGH
 
 # Add used projects here (see included pri files below for available projects)
-#CONFIG += dll ML OpenMP MLBase flann
-CONFIG += dll ML MLBase flann
+CONFIG += dll ML MLBase flann OpenMP
 
 MLAB_PACKAGES += ISI_General \
                  ISI_ThirdParty \

@@ -199,7 +199,7 @@ void HausdorffDistance::computeDistancesFlann( const XMarkerList* const aList, c
   flann::Matrix<DataType> dists(new DataType[nQueryPoints], aMatrix.rows, 1);
 
   flann::SearchParams searchParams(flann::FLANN_CHECKS_UNLIMITED, 0);
-  //searchParams.cores = 0;
+  searchParams.cores = 0;
 
   // Performs kNN search. Note that the returned distances are squared.
   bIndex.knnSearch(aMatrix, indices, dists, 1, searchParams);
